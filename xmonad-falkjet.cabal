@@ -1,0 +1,36 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           xmonad-falkjet
+version:        0.1.0.0
+homepage:       https://github.com/falkjet/xmonad#readme
+bug-reports:    https://github.com/falkjet/xmonad/issues
+author:         Falk Markus Dursun Jetlund
+maintainer:     falk@jetlund.com
+copyright:      2023 Falk Markus Dursun Jetlund
+license:        BSD-3-Clause
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/falkjet/xmonad
+
+executable try-haskell
+  main-is: xmonad.hs
+  other-modules:
+      Paths_xmonad_falkjet
+  autogen-modules:
+      Paths_xmonad_falkjet
+  hs-source-dirs:
+      ./
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , filepath
+    , xmonad
+    , xmonad-contrib
+  default-language: Haskell2010
