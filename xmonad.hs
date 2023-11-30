@@ -73,6 +73,7 @@ simpleKeys conf =
     ("M-S-r", spawn "xmonad --recompile; xmonad --restart", "Recompile and restart"),
     ("M-C-r", spawn "xmonad --restart", "Restart"),
     ("M-S-q", io exitSuccess, "Exit Xmonad"),
+    ("M-x", spawn "xkill", "Kill a window (xkill)"),
     -- lock
     ("M-C-l", spawn "loginctl lock-session", "Lock screen"),
     -- Move, risize and focus stuff
