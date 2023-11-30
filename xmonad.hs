@@ -191,6 +191,7 @@ myManageHook =
       className =? "Evolution" --> doShift (myWorkspaces !! 2),
       className =? "ONLYOFFICE Desktop Editors" --> doShift (myWorkspaces !! 3),
       className =? "Spotify" --> doShift (myWorkspaces !! 4),
+      stringProperty "WM_WINDOW_ROLE" =? "pop-up" --> doCenterFloat,
       resource =? "desktop_window" --> doIgnore,
       resource =? "kdesktop" --> doIgnore
     ]
