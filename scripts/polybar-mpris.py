@@ -6,6 +6,7 @@ from xml.etree import ElementTree
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
+from time import sleep
 
 dbus_loop = DBusGMainLoop(set_as_default=True)
 
@@ -100,4 +101,9 @@ def find_all_members(object):
 
 
 if __name__ == "__main__":
-    main()
+    while True:
+        try:
+            main()
+            sys.exit(0)
+        except dbus.DBusException:
+            sleep(1)
