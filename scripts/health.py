@@ -11,7 +11,7 @@ solution, but it will not install anything.
 
 
 def main():
-    require_cmd("i3lockr", yay="i3lockr-bin")
+    require_cmd("i3lockr", aur="i3lockr-bin")
     require_cmd("dunst", pacman="dunst")
     require_cmd("rofi", pacman="rofi")
     require_cmd("playerctl", pacman="playerctl")
@@ -22,7 +22,7 @@ def main():
     require_cmd("feh", pacman="feh")
     require_cmd("xsetroot", pacman="xorg-xsetroot")
     require_cmd("polybar", pacman="polybar")
-    require_cmd("flameshort", pacman="flameshot")
+    require_cmd("flameshot", pacman="flameshot")
     require_cmd("lowbattery", aur="low-battery-warning-git")
     if require_cmd("fc-list", pacman="font-config"):
         require_font("SauceCodePro Nerd Font", pacman="ttf-sourcecodepro-nerd")
@@ -52,7 +52,7 @@ def require_font(font, pacman=None, yay=None):
     return False
 
 
-def require_cmd(cmd, pacman=None, yay=None):
+def require_cmd(cmd, pacman=None, aur=None):
     if which(cmd) is not None:
         print(f"{cmd} {Colors.GREEN}OK{Colors.RESET}")
         return True
@@ -62,9 +62,9 @@ def require_cmd(cmd, pacman=None, yay=None):
         case "arch" if pacman is not None:
             print_hint(f"{cmd} can be installed with ",
                        f"`sudo pacman -S {pacman}`")
-        case "arch" if yay is not None:
+        case "arch" if aur is not None:
             print_hint(f"{Colors.YELLOW}{cmd} can be installed with ",
-                       f"`yay -S {yay}`{Colors.RESET}")
+                       f"`yay -S {aur}`{Colors.RESET}")
 
     return False
 
